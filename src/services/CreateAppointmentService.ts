@@ -10,13 +10,13 @@ import AppointmentsRepository from '../repositories/AppointmentsRepository';
  */
 
 interface AppointmentDTO {
-  provider: string;
+  provider_id: string;
   date: Date;
 }
 
 class CreateAppointmentService {
   public async execute({
-    provider,
+    provider_id,
     date,
   }: AppointmentDTO): Promise<Appointment> {
     const appointmentsRepository = getCustomRepository(AppointmentsRepository);
@@ -33,7 +33,7 @@ class CreateAppointmentService {
 
     // it creates an instance of the appointment but it does not save it into the database
     const appointment = appointmentsRepository.create({
-      provider,
+      provider_id,
       date: appointmentDate,
     });
 
