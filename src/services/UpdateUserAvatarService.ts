@@ -2,8 +2,8 @@ import { getRepository } from 'typeorm';
 import path from 'path';
 import fs from 'fs';
 import User from '../models/User';
-import usersRouter from '../routes/users.routes';
 import uploadConfig from '../config/upload';
+import AppError from '../erros/AppError';
 
 interface Request {
   user_id: string;
@@ -17,7 +17,7 @@ class UpdateUserAvatarService {
     const user = await usersRepository.findOne(user_id);
 
     if (!user) {
-      throw new Error('User not authenticated.');
+      throw new AppError('User not authenticated.');
     }
 
     if (user.avatar) {
