@@ -42,7 +42,7 @@ describe('AuthenticateUser', () => {
       await createUserService.execute({name: 'John Doe', email: 'johndoe@email.com', password: '123456'});
 
 
-      expect(authenticateUserService.execute({email: 'johndoe@email.com', password: 'wrong_password'})).rejects.toBeInstanceOf(AppError);
+      await expect(authenticateUserService.execute({email: 'johndoe@email.com', password: 'wrong_password'})).rejects.toBeInstanceOf(AppError);
     });
 
 })
