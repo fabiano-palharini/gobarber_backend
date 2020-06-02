@@ -9,8 +9,9 @@ import AppointmentsRepository from '@modules/appointments/infra/typeorm/reposito
 import IUsersRepository from '@modules/users/repositories/IUsersRepositories';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 
-// import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
-// import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
+import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
+import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
 container.registerSingleton<IAppointmentsRepository>('AppointmentsRepository', AppointmentsRepository); //first parameter is an ID for that repository you want to get
 container.registerSingleton<IUsersRepository>('UsersRepository', UsersRepository);
+container.registerSingleton<IUserTokensRepository>('UserTokensRepository', UserTokensRepository);
