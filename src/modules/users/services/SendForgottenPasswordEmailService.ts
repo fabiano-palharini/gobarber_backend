@@ -4,6 +4,7 @@ import IUsersRepository from '../repositories/IUsersRepositories';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
 import IMailProvider  from '@shared/container/providers/MailProvider/models/IMailProvider';
 import AppError from '@shared/errors/AppError';
+import path from 'path';
 
 interface IRequest {
   email: string;
@@ -29,14 +30,16 @@ class SendForgottenPasswordEmailService {
 
       const { token } = await this.userTokensRepository.generate(user.id);
 
+      const forgottenPasswordTemplate = path.resolve(__dirname, '..', 'templates', 'forgot_password.hbs');
+
       await this.mailProvider.sendMail({
         to: {name: user.name, email: user.email},
         subject: 'GoBarber - Password Recovery',
         templateData: {
-          template: 'Hello, {{name}}: {{token}}',
+          file: forgottenPasswordTemplate,
           variables: {
             name: user.name,
-            token,
+            link: `http://localhost:3333/reset_password?token=${token}`,
           }
         }
       });
