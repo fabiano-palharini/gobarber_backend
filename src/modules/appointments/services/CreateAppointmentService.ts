@@ -12,6 +12,7 @@ import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
 interface AppointmentDTO {
   provider_id: string;
+  user_id: string;
   date: Date;
 }
 
@@ -26,6 +27,7 @@ class CreateAppointmentService {
 
   public async execute({
     provider_id,
+    user_id,
     date,
   }: AppointmentDTO): Promise<Appointment> {
 
@@ -43,6 +45,7 @@ class CreateAppointmentService {
     // it creates an instance of the appointment but it does not save it into the database
     const appointment = await this.appointmentsRepository.create({
       provider_id,
+      user_id,
       date: appointmentDate,
     });
 
