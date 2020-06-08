@@ -1,4 +1,4 @@
-import { startOfHour } from 'date-fns';
+import { startOfHour, isBefore, getHours } from 'date-fns';
 import { injectable, inject } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 import Appointment from '../infra/typeorm/entities/Appointment';
@@ -34,12 +34,24 @@ class CreateAppointmentService {
 
     const appointmentDate = startOfHour(date);
 
+    if (isBefore(appointmentDate, Date.now())) {
+      throw new AppError("You can't create an appointment on a past date.");
+    }
+
+    if (user_id === provider_id) {
+      throw new AppError("You can't create an appointment for yourself.");
+    }
+
+    if (getHours(appointmentDate) < 8 || getHours(appointmentDate) > 17) {
+      throw new AppError("You can't create an appointment outside working time.");
+    }
+
     const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
       appointmentDate,
     );
 
     if (findAppointmentInSameDate) {
-      throw new AppError('This appointment is already booked');
+      throw new AppError('This appointment is already booked.');
     }
 
     // it creates an instance of the appointment but it does not save it into the database
