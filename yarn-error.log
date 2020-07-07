@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types\class-transformer -D
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add sdk-aws
 
 PATH: 
   C:\python\python37;C:\python\python382\Scripts\;C:\python\python382\;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\HPE_Security\Fortify_SCA_and_Apps_17.20\bin;C:\oracle\product\12.2.0\client_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\RSA SecurID Token Common;C:\Program Files\RSA SecurID Token Common;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\1E\NomadBranch\;C:\Program Files\Git\cmd;C:\Program Files\Dell\Dell Data Protection\Encryption\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Cloud Foundry;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;c:\program files (x86)\adaptiva\AdaptivaClient\bin\x32;c:\program files (x86)\adaptiva\AdaptivaClient\bin\x64;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Android\Sdk\platform-tools;C:\Android\Sdk\tools;C:\Program Files (x86)\Microsoft VS Code;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\python\python37\Scripts\;C:\python\python37\;C:\Users\fabiano_palharini\AppData\Local\Microsoft\WindowsApps;;C:\Users\fabiano_palharini\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\fabiano_palharini\AppData\Roaming\npm;C:\Users\fabiano_palharini\AppData\Local\Yarn\bin;C:\Program Files (x86)\Microsoft VS Code\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types/class-transformer: Not found
+  Error: https://registry.yarnpkg.com/sdk-aws: Not found
       at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66096:18)
       at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
       at Request.emit (events.js:223:5)
