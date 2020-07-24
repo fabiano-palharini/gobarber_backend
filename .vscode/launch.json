@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "node",
-            "request": "launch", //se fosse "launch" ele vai rodar a aplicacao. No caso de usar o attach, eu precis startar a aplicacao por fora e depois "attachar" o debug nela
+            "request": "attach", //se fosse "launch" ele vai rodar a aplicacao. No caso de usar o attach, eu precis startar a aplicacao por fora e depois "attachar" o debug nela
             "protocol": "inspector",
             "restart": true,
             "name": "Launch Program",
